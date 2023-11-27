@@ -1927,10 +1927,7 @@ label {
   margin: 0 0 1em 0;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="date"],
+input,
 select,
 textarea {
   -moz-appearance: none;
@@ -1948,19 +1945,18 @@ textarea {
   width: 100%;
 }
 
-input[type="text"]:invalid,
-input[type="password"]:invalid,
-input[type="email"]:invalid,
-input[type="date"]:invalid,
+input:invalid,
 select:invalid,
 textarea:invalid {
   box-shadow: none;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="date"]:focus,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+input:focus,
 select:focus,
 textarea:focus {
   box-shadow: 0 0 0 2px #21b2a6;
@@ -1983,10 +1979,7 @@ select::-ms-expand {
   display: none;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="date"],
+input,
 select {
   height: 2.75em;
 }
