@@ -45,6 +45,76 @@
     offset: $header.outerHeight(),
   });
 
+  let telefone = document.querySelector("#telefone");
+
+  telefone.addEventListener("keyup", (event) => {
+    let input = event.target;
+    input.value = phoneMask(input.value);
+  });
+
+  const phoneMask = (value) => {
+    if (!value) return "";
+    value = value.replace(/\D/g, "");
+    value = value.replace(/(\d{2})(\d)/, "($1) $2");
+    value = value.replace(/(\d)(\d{4})$/, "$1-$2");
+    return value;
+  };
+
+  // we use javascript sort function to compare to value
+  function sortDataByCity(data) {
+    return data.sort(function (a, b) {
+      // here a , b is whole object, you can access its property
+      //convert both to lowercase
+      let x = a.city.toLowerCase();
+      let y = b.city.toLowerCase();
+
+      //compare the word which is comes first
+      if (x > y) {
+        return 1;
+      }
+      if (x < y) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  let aeroportos = document.querySelectorAll(".cidade");
+
+  const url =
+    "https://raw.githubusercontent.com/algolia/datasets/master/airports/airports.json";
+  fetch(url)
+    .then(function (response) {
+      if (response.status !== 200) {
+        console.warn(
+          "Looks like there was a problem. Status Code: " + response.status
+        );
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then((data) => {
+        let option;
+        data = sortDataByCity(data);
+        aeroportos.forEach((aeroporto) => {
+          let defaultOption = document.createElement("option");
+          defaultOption.text = "Busque por Aeroporto";
+          aeroporto.add(defaultOption);
+          for (let i = 0; i < data.length; i++) {
+            option = document.createElement("option");
+            option.text = `${data[i].city} (${data[i].iata_code})`;
+            option.value = data[i].city;
+
+            aeroporto.add(option);
+          }
+          aeroporto.selectedIndex = 0;
+        });
+      });
+    })
+    .catch(function (err) {
+      console.error("Fetch Error -", err);
+    });
+
   // Menu.
   // $('#menu')
   // 	.append('<a href="#menu" class="close"></a>')

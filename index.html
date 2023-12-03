@@ -48,12 +48,119 @@
           <h2>Travel Miles Br</h2>
           <p>QUER VIAJAR PARA QUALQUER LUGAR DO MUNDO PAGANDO MENOS?<br /></p>
           <ul class="actions special">
-            <li><a href="#cta" class="button primary">VAMOS LÁ</a></li>
+            <li>
+              <a href="#cta" class="button primary">COTE AGORA SUA VIAGEM</a>
+            </li>
           </ul>
         </div>
-        <a href="#one" class="more scrolly">Saiba Mais</a>
+        <a href="#cta" class="more scrolly">Saiba Mais</a>
       </section>
+      <!-- CTA -->
+      <section id="cta" class="wrapper style4">
+        <div class="inner">
+          <header>
+            <h2>Informe os Dados da sua Viagem</h2>
+          </header>
 
+          <!--
+           action="https://formsubmit.co/marcelo.prof.fis@gmail.com"
+        -->
+          <form
+            class="actions"
+            action="https://formsubmit.co/marcelodamasceno@gmail.com"
+            method="post"
+          >
+            <div class="column">
+              <div class="line">
+                <p class="legenda">Digite Seus Dados Pessoais</p>
+              </div>
+              <div class="line">
+                <div class="column">
+                  <label for="nome">Nome</label>
+                  <input type="text" name="nome" />
+                </div>
+                <div class="column">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" />
+                </div>
+                <div class="column">
+                  <label for="telefone">WhatsApp</label>
+                  <input
+                    id="telefone"
+                    type="tel"
+                    placeholder="(xx) xxxxx-xxxx"
+                    name="telefone"
+                    pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="line">
+              <p class="legenda">Digite Os Dados da Sua Viagem</p>
+            </div>
+            <div class="line">
+              <div class="column">
+                <label for="cidade_origem">Origem</label>
+                <select
+                  class="cidade"
+                  id="origem"
+                  name="cidade-origem"
+                ></select>
+              </div>
+              <div class="column">
+                <label for="cidade_destino">Destino</label>
+                <select
+                  class="cidade"
+                  id="cidade_destino"
+                  name="cidade_destino"
+                ></select>
+              </div>
+            </div>
+            <div class="line">
+              <div class="column">
+                <label for="data_partida">Data de Partida:</label>
+                <input type="date" id="data_partida" name="data_partida" />
+              </div>
+              <div class="column">
+                <label for="turno_partida">Turno Partida</label>
+                <select name="turno_partida">
+                  <option value="manha">Manhã</option>
+                  <option value="tarde">Tarde</option>
+                  <option value="noite">Noite</option>
+                  <option value="madrugada">Madrugada</option>
+                </select>
+              </div>
+              <div class="column">
+                <label for="data_retorno">Data de Retorno:</label>
+                <input type="date" id="data_retorno" name="data_retorno" />
+              </div>
+              <div class="column">
+                <label for="turno_retorno">Turno Retorno</label>
+                <select name="turno_retorno">
+                  <option value="manha">Manhã</option>
+                  <option value="tarde">Tarde</option>
+                  <option value="noite">Noite</option>
+                  <option value="madrugada">Madrugada</option>
+                </select>
+              </div>
+            </div>
+            <div class="line">
+              <input type="radio" id="flexivel" name="flexivel" value="sim" />
+              <label for="flexivel">
+                Você tem flexibilidade de mais ou menos 1 dia das datas?
+              </label>
+            </div>
+            <div class="line">
+              <input
+                class="button fit primary"
+                id="enviar"
+                type="submit"
+                value="Enviar"
+              />
+            </div>
+          </form>
+        </div>
+      </section>
       <!-- One -->
       <section id="one" class="wrapper style1 special">
         <div class="inner">
@@ -172,70 +279,6 @@
           </ul>
         </div>
       </section> -->
-
-      <!-- CTA -->
-      <section id="cta" class="wrapper style4">
-        <div class="inner">
-          <header>
-            <h2>Faça agora a cotação da sua viagem</h2>
-            <!-- <p>
-              Aliquam ut ex ut augue consectetur interdum endrerit imperdiet
-              amet eleifend fringilla.
-            </p> -->
-          </header>
-
-          <ul class="actions stacked">
-            <!--
-               action="https://formsubmit.co/marcelodamasceno@gmail.com"
-              -->
-            <form
-              action="https://formsubmit.co/marcelo.prof.fis@gmail.com"
-              method="post"
-            >
-              <fieldset>
-                <legend>Digite Seus Dados Pessoais</legend>
-              </fieldset>
-              <fieldset>
-                <legend>Digite sua Preferência de Viagem</legend>
-                <label for="cidade_origem">Cidade de Origem:</label>
-                <input
-                  type="text"
-                  id="cidade_origem"
-                  name="cidade_origem"
-                /><br />
-                <label for="cidade_destino">Cidade de Destino:</label>
-                <input
-                  type="text"
-                  id="cidade_destino"
-                  name="cidade_destino"
-                /><br />
-                <label for="data_partida">Data de Partida:</label>
-                <input
-                  type="date"
-                  id="data_partida"
-                  name="data_partida"
-                /><br />
-                <label for="hora_partida">Hora de Partida:</label>
-                <input type="time" name="hora_partida" step="600" /><br />
-                <label for="data_retorno">Data de Retorno:</label>
-                <input
-                  type="date"
-                  id="data_retorno"
-                  name="data_retorno"
-                /><br />
-                <label for="hora_partida">Data de Partida:</label>
-                <input type="time" name="hora_partida" step="600" /><br />
-                <input type="radio" id="flexivel" name="flexivel" value="sim" />
-                <label for="flexivel"
-                  >Você tem flexibilidade de até 2 dias antes ou depois da data
-                  de partida e retorno?</label
-                >
-              </fieldset>
-              <input class="button fit primary" type="submit" value="Enviar" />
-            </form>
-          </ul>
-        </div>
-      </section>
 
       <!-- Footer -->
       <footer id="footer">

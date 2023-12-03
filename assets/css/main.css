@@ -201,7 +201,7 @@ textarea {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 15pt;
   font-weight: 400;
-  letter-spacing: 0.075em;
+  letter-spacing: 0.055em;
   line-height: 1.65em;
 }
 
@@ -210,7 +210,7 @@ textarea {
   input,
   select,
   textarea {
-    font-size: 13pt;
+    font-size: 12pt;
   }
 }
 
@@ -219,7 +219,7 @@ textarea {
   input,
   select,
   textarea {
-    font-size: 12pt;
+    font-size: 10pt;
   }
 }
 
@@ -1942,7 +1942,6 @@ textarea {
   outline: 0;
   padding: 0 1em;
   text-decoration: none;
-  width: 100%;
 }
 
 input:invalid,
@@ -3846,7 +3845,8 @@ body.is-preload #banner:after {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  max-width: 45em;
+  /* max-width: 45em; */
+  flex-direction: column;
 }
 
 #cta .inner header {
@@ -3855,11 +3855,23 @@ body.is-preload #banner:after {
   -ms-order: 1;
   order: 1;
   padding-right: 3em;
-  width: 70%;
+  width: 100%;
 }
 
 #cta .inner header p {
   color: inherit;
+}
+
+.line .legenda {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 10%;
+  margin-bottom: -0.5%;
+}
+
+.line #enviar {
+  margin-top: -2%;
+  margin-bottom: 2%;
 }
 
 #cta .inner .actions {
@@ -3867,8 +3879,24 @@ body.is-preload #banner:after {
   -webkit-order: 2;
   -ms-order: 2;
   order: 2;
-  width: 30%;
+  width: 120%;
   color: white;
+  background-color: rgba(0, 0, 0, 0.137);
+  gap: 5%;
+  border-radius: 2%;
+}
+#cta .line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3%;
+  margin-top: 3%;
+  flex-wrap: wrap;
+}
+#cta .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 980px) {
@@ -3885,7 +3913,7 @@ body.is-preload #banner:after {
   #cta .inner .actions {
     margin-left: auto;
     margin-right: auto;
-    max-width: 20em;
+    /* max-width: 20em; */
     width: 100%;
   }
 }
