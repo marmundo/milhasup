@@ -79,8 +79,9 @@
     });
   }
 
-  let aeroportos = document.querySelectorAll(".cidade");
+  let aeroportos = document.querySelector("#aeroportos");
 
+  console.log(aeroportos);
   const url =
     "https://raw.githubusercontent.com/algolia/datasets/master/airports/airports.json";
   fetch(url)
@@ -96,19 +97,19 @@
       response.json().then((data) => {
         let option;
         data = sortDataByCity(data);
-        aeroportos.forEach((aeroporto) => {
-          let defaultOption = document.createElement("option");
-          defaultOption.text = "Busque por Aeroporto";
-          aeroporto.add(defaultOption);
-          for (let i = 0; i < data.length; i++) {
-            option = document.createElement("option");
-            option.text = `${data[i].city} (${data[i].iata_code})`;
-            option.value = data[i].city;
+        // aeroportos.forEach((aeroporto) => {
+        // let defaultOption = document.createElement("option");
+        // defaultOption.textContent = "Busque por Aeroporto";
+        // aeroportos.appendChild(defaultOption);
+        for (let i = 0; i < data.length; i++) {
+          option = document.createElement("option");
+          option.textContent = `${data[i].city} (${data[i].iata_code})`;
+          option.value = data[i].city;
 
-            aeroporto.add(option);
-          }
-          aeroporto.selectedIndex = 0;
-        });
+          aeroportos.appendChild(option);
+        }
+        aeroportos.selectedIndex = 0;
+        // });
       });
     })
     .catch(function (err) {

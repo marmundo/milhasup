@@ -112,22 +112,29 @@
             <div class="line">
               <p class="legenda">Digite Os Dados da Sua Viagem</p>
             </div>
+            <datalist id="aeroportos"></datalist>
             <div class="line">
               <div class="column">
                 <label for="cidade_origem">Origem</label>
-                <select
+                <input
+                  type="text"
                   class="cidade"
-                  id="origem"
+                  list="aeroportos"
+                  id="cidade-origem"
                   name="cidade-origem"
-                ></select>
+                  placeholder="Aeroporto"
+                />
               </div>
               <div class="column">
                 <label for="cidade_destino">Destino</label>
-                <select
+                <input
+                  type="text"
                   class="cidade"
                   id="cidade_destino"
                   name="cidade_destino"
-                ></select>
+                  list="aeroportos"
+                  placeholder="Aeroporto"
+                />
               </div>
             </div>
             <div class="line">
